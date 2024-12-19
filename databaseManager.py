@@ -7,7 +7,7 @@ def populateDatabase():
     cursor = conn.cursor()
 
     cursor.execute('''
-        DROP TABLE clientes
+        DROP TABLE IF EXISTS clientes
                    ''')
 
     cursor.execute('''
@@ -20,6 +20,7 @@ def populateDatabase():
             ultimoAcessoNegado DOUBLE
         )
     ''')
+
 
     cursor.execute('''
         INSERT INTO clientes (nome, hash, salt, AcessosNegados, ultimoAcessoNegado) VALUES

@@ -12,6 +12,7 @@ def checkUserCooldown(user):
         return (cooldown + startOfTimeout) - time.time()
 
 def incrementarAcessosNegados(user):
+    # {avisar admin sobre acesso negado}
     databaseManager.incrementarAcessosNegados(user)
 
 def resetarAcessosNegados(user):
